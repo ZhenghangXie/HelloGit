@@ -12,7 +12,7 @@ def get_dv(start = 20170101,end = 20180101):
     #--------------------------------------------------------
     
     #define
-    factor_list  = ['Std_Skewness120','BIAS_SMA','CFinNP_2','DEVOL20','ESR30','HL60','HLCEMA_X','ILLIQ_X','M_B','PV_SMA']
+    factor_list  = ['Std_Skewness120','BIAS_SMA','CFinNP_2','DEVOL20','ESR30','HL60','HLCEMA_X','ILLIQ_X','M_B','PV_SMA','SDR60','Non_Name_Factor1']
     check_factor = ','.join(factor_list)
     
     dataview_folder = r'../data'
@@ -58,6 +58,6 @@ def test(factor,data):
             raise TypeError('error index type')
         print ('{} OK!'.format(factor))
 
-import Std_Skewness120,BIAS_SMA,CFinNP_2,DEVOL20,ESR30,HL60,HLCEMA_X,ILLIQ_X,M_B,PV_SMA
-for f in ['Std_Skewness120','BIAS_SMA','CFinNP_2','DEVOL20','ESR30','HL60','HLCEMA_X','ILLIQ_X','M_B','PV_SMA']:
+import Std_Skewness120,BIAS_SMA,CFinNP_2,DEVOL20,ESR30,HL60,HLCEMA_X,ILLIQ_X,M_B,PV_SMA,SDR60,Non_Name_Factor1
+for f in ['Std_Skewness120','BIAS_SMA','CFinNP_2','DEVOL20','ESR30','HL60','HLCEMA_X','ILLIQ_X','M_B','PV_SMA','SDR60','Non_Name_Factor1']:
     test(f, globals()[f].run_formula(dv))
